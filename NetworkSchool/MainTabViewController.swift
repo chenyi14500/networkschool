@@ -27,17 +27,17 @@ class MainTabViewController:UITabBarController
         var moreView = MoreViewController()
         moreView.title = "更多"
         
-        
+        //设置颜色
         var color = UIColor.greenColor()// UIColor(red: 0.0, green: 139.0, blue: 69.0, alpha: 0.0)
         var mine = UINavigationController(rootViewController: viewMine)
-        mine.navigationBar.barTintColor = color
+        //mine.navigationBar.barTintColor = color
         var discovery = UINavigationController(rootViewController: discoveryView)
         var recommend = UINavigationController(rootViewController: recommendView)
         var more = UINavigationController(rootViewController: moreView)
         
         //self.toolbarItems
         //self.navigationController?.navigationBar.sizeThatFits(CGSize(width: , height: <#Int#>))
-        self.tabBar.barTintColor = color
+        //self.tabBar.barTintColor = color
         self.viewControllers = [mine, recommend, discovery, more]
         self.selectedIndex=0
     }

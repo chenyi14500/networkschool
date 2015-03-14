@@ -11,6 +11,9 @@ import UIKit
 
 class RecommendViewController:UIViewController
 {
+    var _scrollView: UIScrollView?
+    var _pageController:UIPageViewController?
     override func viewDidLoad() {
-        super.viewDidLoad()    }
+        super.viewDidLoad()
+    }
 }

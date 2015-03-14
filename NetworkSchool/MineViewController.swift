@@ -9,50 +9,80 @@
 import Foundation
 import UIKit
 
-class MineViewController:UIViewController
+class MineViewController:UIViewController,UISearchBarDelegate, UITableViewDataSource,UITableViewDelegate
 {
+    var _tableview : UITableView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        super.viewDidLoad()
+        self._tableview = UITableView(frame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height), style:UITableViewStyle.Grouped)
         
-        var moreScrollView = UIScrollView()
-        moreScrollView.frame = self.view.bounds
-        //moreScrollView.backgroundColor = UIColor.whiteColor()
+        self._tableview!.delegate = self
+        self._tableview!.dataSource = self
         
-        var posY:Int = 70
-        var buttonHeight:Int = 30
-        var buttonPadding:Int = 28
-        var buttonPadding2:Int = 1
-        var height:CGFloat = CGFloat(buttonHeight)
+        self.view.addSubview(self._tableview!)
         
-        
-        posY = posY + buttonHeight + buttonPadding
-        var messageBtn:UIButton = UIButton(frame:CGRectMake(0.0, CGFloat(posY), self.view.bounds.size.width, height))
-        messageBtn.setTitle("我的课程", forState: UIControlState.Normal)
-        messageBtn.backgroundColor = UIColor.whiteColor()
-        messageBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        
-        
-        posY = posY + buttonHeight + buttonPadding2
-        var settingBtn:UIButton = UIButton(frame:CGRectMake(0.0, CGFloat(posY), self.view.bounds.size.width, height))
-        settingBtn.setTitle("我的考试", forState: UIControlState.Normal)
-        settingBtn.backgroundColor = UIColor.whiteColor()
-        settingBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        
-        
-        
-        
-        moreScrollView.backgroundColor = UIColor.lightGrayColor()
-        
-        
-        moreScrollView.addSubview(messageBtn)
-        moreScrollView.addSubview(settingBtn)
-        
-        
-        self.view.addSubview(moreScrollView)
-
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return 2
+        }
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let identify:String = "mine cell"
+        //var cell = tableView.dequeueReusableCellWithIdentifier(identify, forIndexPath: indexPath) as UITableViewCell
+        var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: identify)
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
+        var section = indexPath.section
+        var row = indexPath.row
+        var text:String = "";
+        switch section {
+        case 0:
+            if(row == 0) {
+                text = "普通用户";
+            }
+            break;
+            
+        case 1:
+            if(row == 0) {
+                text = "我的课程"
+            } else if(row == 1) {
+                text = "我的考试"
+            }
+            break;
+        default:
+            break;
+        }
+        
+        //cell.textLabel = UILabel(
+        cell.textLabel?.text  = text
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self._tableview!.deselectRowAtIndexPath(indexPath, animated: true)
+        NSLog("mine : select row(\(indexPath.row)), section(\(indexPath.section)");
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(indexPath.section == 0 && indexPath.row==0) {
+            return 100
+        }
+        return 50
+    }
+
     
     
 }
