@@ -29,6 +29,7 @@
 		E5715AC51AA20F9400069785 /* 水晶3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5715AC11AA20F9400069785 /* 水晶3.jpg */; };
 		E5715AC81AA222B200069785 /* star-disable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5715AC61AA222B200069785 /* star-disable.png */; };
 		E5715AC91AA222B200069785 /* star-enable.png in Resources */ = {isa = PBXBuildFile; fileRef = E5715AC71AA222B200069785 /* star-enable.png */; };
+		E5D9C24D1AB4098C00E1EE34 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D9C24C1AB4098B00E1EE34 /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		E5715AC11AA20F9400069785 /* 水晶3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "水晶3.jpg"; path = "../../../Documents/chenyi/个人/图片/佳景美物/宝石/水晶3.jpg"; sourceTree = "<group>"; };
 		E5715AC61AA222B200069785 /* star-disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-disable.png"; path = "../../../Downloads/star-disable.png"; sourceTree = "<group>"; };
 		E5715AC71AA222B200069785 /* star-enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-enable.png"; path = "../../../Downloads/star-enable.png"; sourceTree = "<group>"; };
+		E5D9C24C1AB4098B00E1EE34 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				E518B2261A9DC1FA001F65DA /* ClassListViewController.swift */,
 				E518B2281A9E1343001F65DA /* ClassTableViewCell.swift */,
 				E504C3C51AAC264200BA41CB /* SectionListViewController.swift */,
+				E5D9C24C1AB4098B00E1EE34 /* VideoViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				E518B1FE1A9D60A3001F65DA /* ViewController.swift in Sources */,
 				E518B2211A9D94E5001F65DA /* DiscoveryViewController.swift in Sources */,
+				E5D9C24D1AB4098C00E1EE34 /* VideoViewController.swift in Sources */,
 				E518B2231A9D961E001F65DA /* RecommendViewController.swift in Sources */,
 				E518B21D1A9D94A2001F65DA /* MainTabViewController.swift in Sources */,
 				E518B1FC1A9D60A3001F65DA /* NetworkSchool.xcdatamodeld in Sources */,

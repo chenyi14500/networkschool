@@ -123,6 +123,12 @@ class ClassListViewController : UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("didSelectRowAtIndexPath, index=\(indexPath.row)")
+        var sectionView = SectionListViewController()
+        var item = self.sourceData.objectAtIndex(indexPath.row) as NSDictionary
+        sectionView.title = item.objectForKey("Name") as? String
+        self.navigationController?.pushViewController(sectionView, animated: true)
+
+        
         
     }
 
